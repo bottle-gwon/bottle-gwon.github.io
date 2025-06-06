@@ -1,0 +1,54 @@
+*{
+    font-style: italic;
+}
+
+
+
+
+html{
+    background-color: rgb(177, 168, 142);
+}
+body{
+    
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+header{
+    text-align: center;
+    color: white;
+}
+
+main{
+    display: inline-block;
+    background-color: antiquewhite;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    border-radius: 0.8%;
+}
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.profile-intro{
+    text-align: center;
+}
+#profile-intro-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+ 
+}
+.profile-intro-short > p{
+    text-align: left;
+}
