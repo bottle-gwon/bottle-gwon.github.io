@@ -1,0 +1,82 @@
+.chat-screen__texts{
+    padding: 0;
+    list-style-type: none;
+}
+
+.chat-screen{
+    overflow: scroll;
+}
+
+
+
+.chat-screen__texts > .text{
+    color: aliceblue;
+    width: 280px;
+    height: auto;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    line-height: 30px;
+
+}
+
+.chat-screen__texts > .text:nth-child(1){
+    position: relative;
+    top: 10px;
+    margin-bottom: 30px;
+}
+
+
+/* .chat-screen__texts > .text::after{
+    content: "name";
+    color: gray;
+    border-right: 16px solid #34d27b;
+    border-bottom: 16px solid transparent;
+    position: relative;
+    bottom: 40px;
+    left: -10px;
+} */
+
+
+/* 
+.chat-screen__texts > .text:hover{
+    background-color: aquamarine;
+    transition: background-color 1500ms 200ms ease-in;
+}
+
+.chat-screen__texts > .text:hover::after{
+    border-right: 16px solid aquamarine;
+    transition: background-color 1500ms 200ms ease-in;
+
+} */
+
+.extern > .text{
+    background-color: brown;
+    position: relative;
+    left: 20px;
+}
+
+
+
+.internal > .text{
+    background-color: burlywood;
+    position: relative;
+    left: 100px;
+}
+
+
+
+/* 길게 쓰면 본문을 침범 하는데 어떻게 해야 할지 모르겠습니다. */
+#time{
+    position: absolute;
+    left: 200px;
+    top: 90%;
+    color: red;
+}
+
+
+#name{
+    position: absolute;
+    bottom: 90%;
+    color: gray;
+}
