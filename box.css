@@ -75,6 +75,26 @@ body{
     border-radius: 10px;
 }
 
+#clone_btn{
+    display: none;
+}
+.clone_list{
+    display: none;
+    list-style-type: none;
+}
+.clone_list>li:hover{
+    transition: 0.5s;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+#clone_btn:checked ~ .clone_list {
+    display: block;
+}
+li a{
+    display: block;
+}
+
 .pr{
     width: 100%;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="box.css">
 </head>
 <body>
-    
+    <!-- 추가 해볼것 footer에 개선 로그? 가능한가 -->
     <header class="intro">
         <p>오즈 코딩 연습</p>
     </header>
@@ -23,8 +23,20 @@
 
         <div class="link">
 
-            <div class="practice clone" onclick="location.href = './clone_coding'">
-                <a href="./clone_coding/">clone_coding</a>
+            <div class="practice clone">
+                <input id="clone_btn" type="checkbox"/>
+                <label for="clone_btn">clone_coding</label>
+                <ul class="clone_list">
+                    <li>
+                    <a href="./clone_coding/">더덕 마켓</a>
+                    </li>
+                    <li>
+                        <a href="#">hello</a>
+                    </li>
+                    <li>
+                        <a href="#">hello</a>
+                    </li>
+                </ul>
             </div>
             
             <div class="practice layout" onclick="location.href = './layout'">
