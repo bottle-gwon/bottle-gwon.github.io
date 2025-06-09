@@ -44,6 +44,7 @@ body{
     font-size: 150%;
     border-radius: 3px;
     padding: 10px;
+    /* background:linear-gradient(-45deg, transparent 15px, aliceblue 0); */
 }
 #gitTitle{
     font-weight: 900;
@@ -77,6 +78,9 @@ body{
 
 #clone_btn{
     display: none;
+}
+label{
+    font-weight: 700;
 }
 .clone_list{
     display: none;
