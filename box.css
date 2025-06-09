@@ -29,7 +29,7 @@ body{
     display: flex;
     align-items: baseline;
     justify-content: center;
-    width: 50%;
+    width: 1000px;
     height: 800px;
 
     border-radius: 5px;
@@ -48,20 +48,32 @@ body{
 }
 #gitTitle{
     font-weight: 900;
+    padding: 0;
+    margin: 0;
 }
 
 .link{
 
     width: 100%;
     border: 2px solid black;
+    height: 500px;
     border-radius: 5px;
     border-color: white;
     margin-right: 50px;
     font-size: 250%;
     background-color:burlywood;
     box-shadow: 5px 5px 10px;
-    overflow: auto;
+    overflow: scroll;
 
+}
+#linkTitle{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 0;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: 900;
 }
 .practice{
     padding: 5%;
@@ -80,10 +92,14 @@ body{
     display: none;
 }
 label{
-    font-weight: 700;
+    font-weight: 600;
 }
 .clone_list{
-    display: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
     list-style-type: none;
 }
 .clone_list>li:hover{
@@ -93,11 +109,26 @@ label{
     border-radius: 10px;
 }
 #clone_btn:checked ~ .clone_list {
-    display: block;
+    transition: 0.5s;
+    margin: 20px;
+    width: 100%;
+    height: 200px;
+    visibility: visible;
 }
-li a{
-    display: block;
+
+#clone_btn:not(:checked) ~ .clone_list{
+    transition: 0.5s;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
 }
+#clone_btn:not(:checked) ~ .clone_list >li{
+    visibility: hidden;
+}
+
+
 
 .pr{
     width: 100%;
