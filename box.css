@@ -29,9 +29,10 @@ body{
     display: flex;
     align-items: baseline;
     justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
     width: 1000px;
     height: 800px;
-
     border-radius: 5px;
 }
 .sideBar{
@@ -44,7 +45,7 @@ body{
     font-size: 150%;
     border-radius: 3px;
     padding: 10px;
-    /* background:linear-gradient(-45deg, transparent 15px, aliceblue 0); */
+
 }
 #gitTitle{
     font-weight: 900;
@@ -74,6 +75,7 @@ body{
     margin-bottom: 20px;
     color: black;
     font-weight: 900;
+    font-size: 40px;
 }
 .practice{
     padding: 5%;
@@ -132,4 +134,7 @@ label{
 
 .pr{
     width: 100%;
+}
+#prTitle{
+    font-size: 30px;
 }
