@@ -96,12 +96,16 @@
 
 
 #symbolEq{
+    grid-column-start: 4;
+    grid-row-start: 4;
+}
+
+#symbolPlu{
     grid-column-start: 5;
     grid-column-end: 6;
     grid-row-start: 3;
     grid-row-end: 5;
 }
-
 
 #symbolCle{
     background-color: crimson;
