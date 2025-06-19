@@ -132,6 +132,11 @@ const per  = function(num){
 const calculate = function() {
     
     //% 연산
+
+    if(next){
+        return;
+    }
+
     if(symbol===null && displayDigit.textContent.includes('%')){
 
         digit1 = displayDigit.textContent;
@@ -151,20 +156,24 @@ const calculate = function() {
     }
 
     if(digit1 && symbol){
-        digit1 = per(digit1)
-        digit2 = per(displayDigit.textContent);
+        digit1 = per(digit1);
+        digit2 = displayDigit.textContent;
         
         switch(symbol){
             case '+':
+                digit2 = digit2.includes("%") ? digit1 * per(digit2) : digit2;
                 result = Number.parseFloat(digit1) + Number.parseFloat(digit2);
                 break;
             case '-':
+                digit2 = digit2.includes("%") ? digit1 * per(digit2) : digit2;
                 result = digit1  - digit2;
                 break;
             case '✕':
+                digit2 = per(displayDigit.textContent);
                 result = digit1 * digit2;
                 break;
             case '÷':
+                digit2 = per(displayDigit.textContent);
                 result = digit1 / digit2;
                 break;
             default:
@@ -175,16 +184,19 @@ const calculate = function() {
         displayDigit.textContent = result;
         displayDigit.append()
         displaySymbol.textContent = digit1 + symbol + digit2;
+        if(displaySymbol.textContent.includes("--")){
+            displaySymbol.textContent = displaySymbol.textContent.replace("--","-");
+        }
         displaySymbol.append();
 
-
+        digit1 = result;
+        result = null;
+        digit2 = null;
+        symbol = null;
 
     }
 
-    digit1 = result;
-    result = null;
-    digit2 = null;
-    symbol = null;
+    
 
     
 
@@ -195,18 +207,16 @@ const calculate = function() {
  * @param {연산자} op 
  */
 const oper = function(op){
-    
-    //초기
-    if(digit1){
-        calculate();
-        
-    }else{
-        digit1 = displayDigit.textContent;
+
+    if(!next){
+        if(digit1){
+            calculate();
+        }else{
+            digit1 = displayDigit.textContent;
+        }
+        symbol = op;
+        next= true
     }
-    symbol = op;
-    next= true
-
-
 }
 
 /** 화면에 퍼센트 추가 함수
@@ -214,7 +224,7 @@ const oper = function(op){
  */
 const addPer = function(){
 
-    if(displayDigit.textContent !== '0'){
+    // if(displayDigit.textContent !== '0'){
         const tmp = document.createElement("p")
         tmp.id = 'calDigit';
 
@@ -228,7 +238,8 @@ const addPer = function(){
     
 
         displayDigit.replaceChildren(tmp);
-    }
+    
+    
 }
 
 /** 백스페이스 함수
