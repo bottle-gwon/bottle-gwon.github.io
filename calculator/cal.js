@@ -283,6 +283,7 @@ for (const element of calBtn){
     if(element.className.includes('number')){
         element.addEventListener("click", function(){
             console.log(element.textContent);
+            console.log(this)
             addDigit(element.textContent);
         })
 
