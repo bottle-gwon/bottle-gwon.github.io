@@ -142,7 +142,7 @@ label{
 *{
    font-size: 30px;
    font-weight: 100;
-   background-color: rgb(30, 30, 30) ;
+   background-color: rgb(50, 50, 50) ;
    color: aliceblue;
    margin: 0;
    padding: 0;
@@ -158,6 +158,7 @@ body{
 }
 
 .dash-board{
+    flex: 110;
     display: flex;
     flex-direction: column;
     width: 15vw;
@@ -182,7 +183,7 @@ body{
 }
 
 .list{
-    flex-grow: 2;
+    flex: 510;
     display: flex;
     flex-direction: column;
 
@@ -208,16 +209,28 @@ body{
 
 
 .list-explain{
-    flex-grow: 2;
+
+    flex: 110;
 }
 
 .eli-link{
-    flex-grow: 1;
+
+    flex: 110;
+
 }
 
 .detail-img{
-    flex-grow: 1;
+
+    flex: 110;
+
     width: 500px;
     height: 400px;
     object-fit: cover;
+}
+.list-detail >a{
+    margin: 10px;
+}
+
+.list-detail > p{
+    margin: 10px;
 }

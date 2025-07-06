@@ -1,9 +1,7 @@
 const displayDigit = document.querySelector("#calDigit"); //디스플레이 숫자
 const displaySymbol = document.querySelector("#calSymbol");//디스플레이 부호
 
-
 const calBtn = document.querySelector(".cal-button").children;
-
 
 
 //숫자 임시 저장 
@@ -21,8 +19,7 @@ const addDigit = function(number){
 
     const tmp = document.createElement("p")
     tmp.id = 'calDigit';
-
-    
+ 
     if(next && symbol !== null){
         displayDigit.textContent = '0';
         displaySymbol.textContent = digit1 + symbol;
@@ -141,7 +138,6 @@ const calculate = function() {
 
         digit1 = displayDigit.textContent;
         
-        if(symbol === null){
             displaySymbol.textContent = digit1;
             displaySymbol.append();
 
@@ -149,9 +145,7 @@ const calculate = function() {
             displayDigit.textContent = digit1;
             displayDigit.append()
             return;
-        }
 
-        digit1 = per(digit1);
 
     }
 
@@ -196,10 +190,6 @@ const calculate = function() {
 
     }
 
-    
-
-    
-
 }
 
 /** 연산자 추가함수
@@ -208,6 +198,7 @@ const calculate = function() {
  */
 const oper = function(op){
 
+    //next가 true면 다음은 숫자가 들어가야한다.
     if(!next){
         if(digit1){
             calculate();
@@ -217,6 +208,7 @@ const oper = function(op){
         symbol = op;
         next= true
     }
+
 }
 
 /** 화면에 퍼센트 추가 함수
@@ -236,7 +228,6 @@ const addPer = function(){
             tmp.textContent = displayDigit.textContent.replace("%","");
         }
     
-
         displayDigit.replaceChildren(tmp);
     
     
@@ -283,7 +274,6 @@ for (const element of calBtn){
     if(element.className.includes('number')){
         element.addEventListener("click", function(){
             console.log(element.textContent);
-            console.log(this)
             addDigit(element.textContent);
         })
 

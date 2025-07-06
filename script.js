@@ -9,30 +9,19 @@ const key = {
     4: study
 }
 
-console.log(draw)
-
-console.log(about)
-
-console.log(dashBtn[1]);
-
 //처음 실행되면 about 페이지
-window.onload = () =>{
-    draw[0].innerHTML = about.title;
-    draw[1].innerHTML = about.text;
-}
+// window.onload = () =>{
+//     draw[0].innerHTML = about.title;
+//     draw[1].innerHTML = about.text[0];
+// }
 
 for(let i =1; i< dashBtn.length; i++){
     dashBtn[i].addEventListener("click", ()=>{
         draw[0].innerHTML = key[i].title;
-        draw[1].innerHTML = key[i].text;
+        draw[1].innerHTML = ""
+        key[i].text.map((eliment)=>{
+            draw[1].innerHTML +=  eliment;
+        })
+
     })
 }
-
-// for (const [index, btn] of dashBtn){
-//     if(btn.className === 'dash-board-btn'){
-//         btn.addEventListener("click", ()=>{
-//             draw[0].textContent = key[index].title;
-//             console.log(key[index].title)
-//         })
-//     }
-// }
